@@ -1,0 +1,210 @@
+/**  -- 宽 -- **/
+.width(@width) {
+  width: @width/@unit;
+}
+/**  -- 宽 -- **/
+
+/**  -- 高 -- **/
+.height(@height) {
+  height: @height/@unit;
+}
+/**  -- 高 -- **/
+
+/**  -- 内间距 -- **/
+.padding(@t, @r, @b, @l) {
+  padding: @t/@unit @r/@unit @b/@unit @l/@unit;
+}
+
+.padding-left(@l) {
+  padding: @l/@unit;
+}
+
+.padding-right(@r) {
+  padding: @r/@unit;
+}
+
+.padding-top(@t) {
+  padding: @t/@unit;
+}
+
+.padding-bottom(@b) {
+  padding: @b/@unit;
+}
+/**  -- 内间距 -- **/
+
+/**  -- 外间距 -- **/ 
+.margin(@t, @r, @b, @l) {
+  margin: @t/@unit @r/@unit @b/@unit @l/@unit;
+}
+
+.margin-left(@l) {
+  margin: @l/@unit;
+}
+
+.margin-right(@r) {
+  margin: @r/@unit;
+}
+
+.margin-top(@t) {
+  margin: @t/@unit;
+}
+
+.margin-bottom(@b) {
+  margin: @b/@unit;
+}
+/**  -- 外间距 -- **/ 
+
+/**  -- border -- **/
+.border(@type, @size, @color) {
+  border: @type @size/@unit @color;
+}
+/**  -- border -- **/
+
+/** -- rect type -- **/
+.border-radius(@radius:0) {
+  border-top-left-radius:@radius/@unit;
+  border-top-right-radius:@radius/@unit;
+  border-bottom-left-radius:@radius/@unit;
+  border-bottom-right-radius:@radius/@unit;
+  -webkit-background-clip:padding-box;
+}
+/** -- rect type -- **/
+
+/**  -- flex 布局相关 -- **/
+.display-box() {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display: flex;
+}
+.box-direction-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.box-flex(@scale:1) {
+  -webkit-box-flex:@scale;
+  -webkit-flex:@scale;
+}
+.box-align(@align:center) {
+  -webkit-box-align: @align;
+  -webkit-align-items: @align;
+  align-items: @align;
+}
+.box-pack-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.box-pack(@justify:flex-start) {
+  -webkit-box-pack: @justify;
+  -webkit-justify-content: @justify;
+  justify-content: @justify;
+}
+/**  -- flex 布局相关 -- **/
+
+/** -- 文字截断 ...-- **/
+.text-ellipsis(){
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/** -- 文字截断 ...-- **/
+
+/** -- 多行文字截断 ...-- **/
+.mul-text-ellipsis(){
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/** -- 多行文字截断 ...-- **/
+
+/* -- 1px line -- */
+.border-1px-common() {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  -webkit-transform: scaleY(.5);
+  -webkit-transform-origin: 0 0;
+}
+/* -- 1px line -- */
+
+/* -- 底部线 -- */
+.border-1px-btm(@btm: -1px, @color:#d2d2d2) {
+  position: relative;
+  &:before {
+    .border-1px-common;
+    bottom: @btm/@unit;
+    border-bottom: 1/@unit solid @color;
+  }
+}
+/* -- 底部线 -- */
+
+/* -- 顶部线 -- */
+.border-1px-top(@top: -1px, @color:#d2d2d2) {
+  position: relative;
+  &:before {
+    .border-1px-common;
+    top: @top/@unit;
+    border-bottom: 1/@unit solid @color;
+  }
+}
+/* -- 顶部线 -- */
+
+/* -- 按钮按下效果 -- */ 
+.tap-active(@color: @gm-line) {
+  -webkit-tap-highlight-color: @color;
+  &:active{
+    background-color: @color;
+  }
+  &:focus{
+    background-color: @color;
+  }
+}
+/* -- 按钮按下效果 -- */ 
+
+/* -- 卡片背景图 -- */
+.background-img(@width, @height, @right) {
+  width: @width/@unit;
+  height: @height/@unit;
+  background: no-repeat center;
+  background-size: cover;
+}
+/* -- 卡片背景图 -- */
+
+/* -- 滑动 -- */
+.scroll-touch{
+  .display-box;
+  box-sizing: border-box;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none!important;
+  }
+}
+/* -- 滑动 -- */
+
+/* -- 清除浮动 -- */
+.float-clear() {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+/* -- 清除浮动 -- */
+
+/* -- 隐藏 -- */
+.none {
+  display: none!important;
+}
+/* -- 隐藏 -- */

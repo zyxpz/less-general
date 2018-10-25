@@ -1,18 +1,25 @@
 {
-  "name": "less-general",
+  "name": "mido-less-general",
   "version": "1.0.0",
   "description": "less通用样式",
   "files": [
 		"lib/**",
 		"dist/**",
 		"examples/**"
-	],
+  ],
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/zyxpz/less-general"
+	},
+	"bugs": {
+		"url": "https://github.com/zyxpz/less-general/issues"
+	},
   "main": "",
   "scripts": {
     "build": "./node_modules/.bin/gulp build",
     "lint": "lint-staged"
   },
-  "author": "",
+  "author": "MidnightBlues",
   "license": "ISC",
   "dependencies": {},
   "devDependencies": {

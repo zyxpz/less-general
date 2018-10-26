@@ -208,3 +208,15 @@
   display: none!important;
 }
 /* -- 隐藏 -- */
+
+.translate(@x, @y) {
+  transform: translate(@y/@unit, @y/@unit);
+}
+
+.font-size(@s) {
+  font-size: @s/@unit;
+}
+
+.line-height(@h) {
+  line-height: @h/@unit;
+}

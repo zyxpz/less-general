@@ -3,7 +3,9 @@ const plugins = require('gulp-load-plugins')();
 const less = require('gulp-less');
 const stripCssComments = require('gulp-strip-css-comments');
 const LessAutoprefix = require('less-plugin-autoprefix');
-const autoprefix = new LessAutoprefix({ browsers: ['last 2 versions'] });
+const autoprefix = new LessAutoprefix({
+	browsers: ['last 2 versions']
+});
 
 const paths = {
 	css: 'lib',
@@ -39,27 +41,27 @@ gulp.task('clean', () => {
 gulp.task('styles', () => {
 	return gulp.src(distFiles.css)
 		.pipe(less({
-      plugins: [autoprefix]
-    }))
+			plugins: [autoprefix]
+		}))
 		.pipe(stripCssComments())
-    .pipe(plugins.minifyCss({
-      advanced: false
-    }))
-    .pipe(gulp.dest(paths.distCss));
+		.pipe(plugins.minifyCss({
+			advanced: false
+		}))
+		.pipe(gulp.dest(paths.distCss));
 })
 
-gulp.task("watch:css", function() {
+gulp.task("watch:css", () => {
 	// 监听css变化
-	gulp.watch(files.css, function() {
+	gulp.watch(files.css, () => {
 		gulp.run('styles');
 	});
 });
 
-gulp.task('default', function() {
+gulp.task('default', () => {
 	gulp.run('styles');
 	gulp.run('watch:css');
 });
 
-gulp.task('build', ['clean'], function() {
+gulp.task('build', ['clean'], () => {
 	gulp.run('default');
 });

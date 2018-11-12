@@ -2,3 +2,4 @@
 - 对移动端和pc做适配
 - 使用前先定义 @module：'pc' 或 @module: 'mobile'
 - 在js文件中引入 import 'mido-less-general/lib/index.js'
+- 在less文件中引入 @import '~mido-less-general/lib/index.less'

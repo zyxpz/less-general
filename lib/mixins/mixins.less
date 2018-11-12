@@ -8,6 +8,12 @@
 .height(@height) {
   height: @height/@unit;
 }
+.min-height(@height) {
+  min-height: @height/@unit;
+}
+.max-height(@height) {
+  max-height: @height/@unit;
+}
 /**  -- 高 -- **/
 
 /**  -- 内间距 -- **/
@@ -39,6 +45,9 @@
 /**  -- 外间距 -- **/ 
 .margin(@t, @r, @b, @l) {
   margin: @t/@unit @r/@unit @b/@unit @l/@unit;
+}
+.margin-auto (@t){
+  margin: @t/@unit auto 0;
 }
 
 .padding(@tb, @lr) {
@@ -109,6 +118,21 @@
   -webkit-justify-content: @justify;
   justify-content: @justify;
 }
+
+/**  -- 定位相关-- **/
+.bottom(@bottom) {
+  bottom: @bottom/@unit;
+}
+.top(@top) {
+  top: @top/@unit;
+}
+.left(@left) {
+  left: @left/@unit;
+}
+.right(@right) {
+  right: @right/@unit;
+}
+
 /**  -- flex 布局相关 -- **/
 
 /** -- 文字截断 ...-- **/
@@ -227,4 +251,10 @@
 
 .line-height(@h) {
   line-height: @h/@unit;
+}
+
+/* -- 动画相关 -- */
+.transform-3d (@x, @y, @z) {
+  -webkit-transform: translate3d(@x/@unit,@y/@unit, @z/@unit);
+  transform: translate3d(@x/@unit,@y/@unit, @z/@unit);
 }

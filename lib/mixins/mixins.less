@@ -50,7 +50,7 @@
   margin: @t/@unit auto 0;
 }
 
-.padding(@tb, @lr) {
+.margin(@tb, @lr) {
   margin: @tb/@unit @lr/@unit;
 }
 
@@ -74,6 +74,18 @@
 /**  -- border -- **/
 .border(@type, @size, @color) {
   border: @type @size/@unit @color;
+}
+.border-top(@type, @size, @color) {
+  border-top: @type @size/@unit @color;
+}
+.border-right(@type, @size, @color) {
+  border-right: @type @size/@unit @color;
+}
+.border-left(@type, @size, @color) {
+  border-left: @type @size/@unit @color;
+}
+.border-bottom(@type, @size, @color) {
+  border-bottom: @type @size/@unit @color;
 }
 /**  -- border -- **/
 

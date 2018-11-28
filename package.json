@@ -1,6 +1,6 @@
 {
   "name": "mido-less-general",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "less通用样式",
   "files": [
     "lib/**",
